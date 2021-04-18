@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,54 +27,50 @@ background-size: cover;
 <div class="col-md-4">
 <div class="card my-3">
 <div class="card-header bg-success">
-<p class="text-white">3.)Create a function that allows you to append a line into a file given the line number</p>
+<p class="text-white">3.)Create a function that reads a file, and displays a line based on the number of vowel letters found in the filename. 
+</p>
 </div>
 <div class="card-body">
 <?php
 
 function randomLiner($filename){
-        
-        #openfile
-    $file = "newTxt.txt" ;
-    $document = fopen($file,'r');
-
+    $fileContents = "newTxt.txt" ;
+    $document = fopen($fileContents,'r');
     $text =  fread($document,filesize("newTxt.txt"));
-    //echo $text;
     fclose($document);  
     echo "<br><br>";
-    #vowelcount
     $vowels = array("a", "e", "i", "o", "u"); 
 
     $length = strlen($text);
-    $count = 0; 
+    $counter = 0; 
     for ($i =0; $i < $length; $i++){
         if (array_search($text[$i], $vowels)){
-            $count++; 
+            $counter++; 
         }
     }
     
-    $alllines = file($file); 
-    if($count%2!=0){
-        echo "The number of vowels are $count<br><br>";
+    $text_lines = file($fileContents); 
+    if($counter%2!=0){
+        echo "The number of vowels insede the file text $counter<br><br>";
         echo "The 3rd Line of the file is <br>";
-        echo ("<h3>$alllines[2]</h3>");
+        echo ("<h3>$text_lines[2]</h3>");
     }else{
-        echo "The number of vowels are $count<br>";
-        echo ($alllines[3]);
+        echo "The number of vowels are $counter<br>";
+        echo ($text_lines[3]);
     }
 
     }
     function readFiles($filename){
         if(file_exists($filename)){
-            $file = fopen($filename,'r');
-            $contents = fread($file, filesize($filename));//read file    
-            echo "<pre>$contents</pre>";//printing data of file  
-            fclose($file);
+            $fileContents = fopen($filename,'r');
+            $contents = fread($fileContents, filesize($filename));  
+            echo "<pre>$contents</pre>";  
+            fclose($fileContents);
 
        }
     }
-    readFiles('sample.txt');
-    randomLiner('newTxt.txt')
+    readFiles('newTxt.txt');
+    randomLiner('newTxt.txt');
 ?>
 </div>
 </div>
