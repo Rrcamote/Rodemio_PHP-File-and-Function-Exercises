@@ -52,7 +52,7 @@ body {
        }
     }
     readFiles('newTxt.txt');
-    existFile('newTxt.txt',"This text will be added to the file",4);
+    existFile('newTxt.txt',"This text will be added into the file",4);
 
 ?>
 </div>
