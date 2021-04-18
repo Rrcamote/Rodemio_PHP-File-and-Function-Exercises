@@ -51,7 +51,8 @@ function randomLiner($filename){
     
     $text_lines = file($fileContents); 
     if($counter%2!=0){
-        echo "The number of vowels insede the file text $counter<br><br>";
+        echo "The number of vowels inside the file text is: $counter<br>";
+        echo "Then the $counter is a odd numbers; <br> therefore ";
         echo "The 3rd Line of the file is <br>";
         echo ("<h3>$text_lines[2]</h3>");
     }else{
