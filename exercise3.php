@@ -25,7 +25,7 @@ background-size: cover;
 <div class="container-fluid">
 <div class="row justify-content-center">
 <div class="col-md-4">
-<div class="card my-3">
+<div class="card my-2">
 <div class="card-header bg-success">
 <p class="text-white">3.)Create a function that reads a file, and displays a line based on the number of vowel letters found in the filename. 
 </p>
